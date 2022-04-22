@@ -1,11 +1,13 @@
+import os
+
 from flask import Flask
 from flask_restx import Api
 
-from config import Config
-from setup_db import db
-from views.directors import director_ns
-from views.genres import genre_ns
-from views.movies import movie_ns
+from demostration_solution.config import Config
+from demostration_solution.setup_db import db
+from demostration_solution.views.directors import director_ns
+from demostration_solution.views.genres import genre_ns
+from demostration_solution.views.movies import movie_ns
 
 
 def create_app(config_object):
@@ -33,4 +35,5 @@ app = create_app(Config())
 app.debug = True
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=10001, debug=True)
+    os.system("pytest")
+    # app.run(host="localhost", port=10001, debug=True)
